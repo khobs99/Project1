@@ -1,23 +1,27 @@
 /*********************************
- * Bushel header
+ * Name header
  * Created by Kenneth Hobday
  *********************************/
 
 #include <iostream>
+
+
 using namespace std;
-int const CAPACITY = 20;
+
+
 class person
 {
 public:
-    person();
-    bool get(istream&);
+	person();
+	bool get(istream&);
+	void put(ostream&);
 
 private:
-    int capacity = 0;
-    string first_name[CAPACITY];
-    string last_name[CAPACITY];
-    int age[CAPACITY];
-    
+	int capacity = 0;
+	string first_name[20];
+	string last_name[20];
+	int age[20];
+
 
 
 };
