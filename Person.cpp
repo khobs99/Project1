@@ -1,14 +1,9 @@
-/*********************************
- * Names code
- *  Created by Kenneth Hobday       01/23/2020
- *********************************/
-
 #include<iostream>
 #include<string>
 #include<fstream>
 #include<cstdlib>
 
-
+const int CAPACITY=20;
 using namespace std;
 
 #include "Person.h"
@@ -19,18 +14,19 @@ using namespace std;
 
 person::person()
 {
-	first_name[20] = "";
-	last_name[20] = "";
+    first_name[CAPACITY] = "";
+    last_name[CAPACITY] = "";
+    age[CAPACITY]=0;
 
 }
 
 bool person::get(istream& in)
 {
-	in >> first_name[20] >> last_name[20] >> age[20];
-	return(in.good());
+    in >> first_name[CAPACITY] >> last_name[CAPACITY] >> age[CAPACITY];
+    return(in.good());
 
 }
 void person::put(ostream &out)
 {
-	out << first_name[20] << last_name[20] << age[20];
+    out << first_name[CAPACITY] << last_name[CAPACITY] << age[CAPACITY];
 }
