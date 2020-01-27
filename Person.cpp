@@ -2,6 +2,7 @@
 #include<string>
 #include<fstream>
 #include<cstdlib>
+#include<iomanip>
 
 const int CAPACITY=20;
 using namespace std;
@@ -14,19 +15,19 @@ using namespace std;
 
 person::person()
 {
-    first_name[CAPACITY] = "";
-    last_name[CAPACITY] = "";
-    age[CAPACITY]=0;
+    first_name = "";
+    last_name = "";
+    age=0;
 
 }
 
-bool person::get(istream& in)
+bool person::get(ifstream& in)
 {
-    in >> first_name[CAPACITY] >> last_name[CAPACITY] >> age[CAPACITY];
+    in >> first_name >> last_name >> age;
     return(in.good());
 
 }
-void person::put(ostream &out)
+void person::put(ofstream &out)
 {
-    out << first_name[CAPACITY] << last_name[CAPACITY] << age[CAPACITY];
+    out << right << first_name << setw(30) << last_name << setw(30) << age <<endl;
 }
