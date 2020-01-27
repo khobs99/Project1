@@ -9,8 +9,8 @@ using namespace std;
 #include "Person.h"
 
 
-//void pop(string *xp, string *yp);
-//void sort(person name[], int count);
+void pop(string *xp, string *yp);
+void sort(person name[], int count);
 
 int main()
 {
@@ -35,7 +35,7 @@ int main()
 		names[n].get(infile);
 		n++;
 	}
-	//sort(names, CAPACITY);
+	sort(names, CAPACITY);
 	outfile << right << setw(20) << "first name" << setw(20) << "last name" << setw(20) << "age" << endl;
 	for (int i = 0; i < CAPACITY; i++)
 	{
@@ -50,7 +50,7 @@ int main()
 
 
 }
-/*void pop(string *xp, string *yp)
+void pop(string *xp, string *yp)
 {
 	string temp = *xp;
 	*xp = *yp;
@@ -66,9 +66,9 @@ void sort(person name[], int count)
 		{
 			if (name[j] > name[j + 1])
 			{
-				pop(&name[j], &name[j + 1]);
+				swap(name[j], name[j + 1]);
 			}
 
 		}
 	}
-}  */
+}  
