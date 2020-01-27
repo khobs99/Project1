@@ -15,7 +15,8 @@ public:
 	person();
 	bool get(ifstream&);
 	void put(ofstream&);
-	
+	bool operator <(person c1);
+	bool operator>(person c1);
 private:
 	int capacity = 0;
 	string first_name;
