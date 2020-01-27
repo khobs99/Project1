@@ -12,15 +12,15 @@ using namespace std;
 class person
 {
 public:
-    person();
-    bool get(istream&);
-    void put(ostream&);
-
+	person();
+	bool get(ifstream&);
+	void put(ofstream&);
+	
 private:
-    int capacity = 0;
-    string first_name[CAPACITY];
-    string last_name[CAPACITY];
-    int age[CAPACITY];
+	int capacity = 0;
+	string first_name;
+	string last_name;
+	int age;
 
 
 
