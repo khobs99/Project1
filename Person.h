@@ -1,5 +1,5 @@
 /*********************************
- * Name header
+ * Person header
  * Created by Kenneth Hobday
  *********************************/
 
@@ -13,10 +13,12 @@ class person
 {
 public:
 	person();
+	~person();
 	bool get(istream&);
 	void put(ostream&);
 	bool operator <(person c1);
 	bool operator>(person c1);
+	bool operator ==(person c1);
 private:
 	int capacity = 0;
 	string first_name;
