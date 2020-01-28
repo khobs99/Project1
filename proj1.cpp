@@ -1,3 +1,7 @@
+/*********************************
+ * Person Sorting      Spring 2020     CSC 231
+ * Created by Kenneth Hobday
+ *********************************/
 #include<iostream>
 #include<cstdlib>
 #include<fstream>
@@ -9,7 +13,7 @@ using namespace std;
 #include "Person.h"
 
 
-void pop(string *xp, string *yp);
+
 void sort(person name[], int count);
 
 int main()
@@ -28,17 +32,17 @@ int main()
 		cout << "The file requested did not open" << endl;
 		exit(1);
 	}
-	
+
 	while (!infile.eof())
 	{
 		names[n].get(infile);
 		n++;
 	}
-	sort(names, CAPACITY);
+	sort(names, n);
 
-	cout << right << setw(20) << "first name" << setw(20) << "last name" << setw(20) << "age" << endl;
-	
-	for (int i = 0; i < CAPACITY; i++)
+	cout <<"\t"<< "first name" <<"\t"<< "last name" <<"\t"<< "age" << endl;
+
+	for (int i = 0; i < n; i++)
 	{
 		names[i].put(cout);
 	}
@@ -51,12 +55,7 @@ int main()
 
 
 }
-void pop(string *xp, string *yp)
-{
-	string temp = *xp;
-	*xp = *yp;
-	*yp = temp;
-}
+
 void sort(person name[], int count)
 {
 	int i, j;
@@ -72,4 +71,4 @@ void sort(person name[], int count)
 
 		}
 	}
-}  
+}
