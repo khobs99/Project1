@@ -16,30 +16,31 @@ int main()
 {
 	class person names[CAPACITY];
 	ifstream infile;
-	ofstream outfile;
 	string filename;
 	int n = 0;
 
 	cout << "Enter the file name you wish to open" << endl;
 	cin >> filename;
 	infile.open(filename + ".txt");
-	outfile.open("Person_New.txt");
 
 	if (infile.fail())
 	{
 		cout << "The file requested did not open" << endl;
 		exit(1);
 	}
+	
 	while (!infile.eof())
 	{
 		names[n].get(infile);
 		n++;
 	}
 	sort(names, CAPACITY);
-	outfile << right << setw(20) << "first name" << setw(20) << "last name" << setw(20) << "age" << endl;
+
+	cout << right << setw(20) << "first name" << setw(20) << "last name" << setw(20) << "age" << endl;
+	
 	for (int i = 0; i < CAPACITY; i++)
 	{
-		names[i].put(outfile);
+		names[i].put(cout);
 	}
 	cout << "The file has been created" << endl;
 
